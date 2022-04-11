@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+
+}
+
+h1{
+    font-size: 35px;
+    font-family: sans-serif;
+    width: 100%;
+    text-align: center;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255,.8);
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.6);
+    padding: 0 2em;
+    & a{
+        color: black;
+        font-family: sant-serif;
+        font-size: 20px;
+    }
+}
+.prev{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.bio{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__inner{
+        width: 70%;
+        text-align: justify;
+        font-size: 20px;
+        font-family: sans-serif;
+    }
+}
+
+
+.str{
+    width: 100%;
+    display: flex;
+}
+.el{
+    width: 50%;
+    font-size: 30px;
+    font-family: sans-serif;
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__text{
+        box-sizing: border-box;
+        padding: 1.5em;
+        margin: .5em 0;
+        & h2{
+            font-size: 40px;
+            color: rgb(100, 0, 0);
+            margin: 0;
+            padding: 0;
+        }
+        &_l{
+            text-align: left;
+            background: linear-gradient(to right,rgba(255, 0, 0,.3), rgba(0,0,0,0));
+        }
+        &_r{
+            text-align: right;
+            background: linear-gradient(to left,rgba(255, 0, 0,.3), rgba(0,0,0,0));
+        }
+    }
+}

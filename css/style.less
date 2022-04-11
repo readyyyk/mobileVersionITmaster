@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+}
+label{
+    position: relative;
+    top: 0;
+    transition: all .3s linear;
+    &:hover{
+        top: 2px;
+    }
+}
+
+.content{
+    min-height: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgb(175, 175, 175);
+    box-sizing: border-box;
+    padding: 0 100px;
+}
+
+.card{
+    &s{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    width: 330px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    border: #fff 1px solid;
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    margin: 1.5em;
+    &__inner{
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(rgba(255,255,255,0),#fff 50%);
+        display: flex;
+        align-items: end;
+        flex-wrap: wrap;
+        color: #4d4d4d;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    &__text{
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__l{
+            margin: 0 10px 0 0;
+        }
+        &__r{
+            text-align: right;
+            width: -webkit-fill-available;
+        }
+    }
+    &__open{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.iv{
+    display: none;
+}
