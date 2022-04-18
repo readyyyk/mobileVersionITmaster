@@ -1,6 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost", "root", "root","it-master-2022-veterany");
-    session_start();
+    include 'srcphp/connect.php';
     $person =  mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM `1` WHERE id = " . $_GET['id']));
     $awardsNames = ["Орден Ленина", "Медаль «За доблестный труд в Великой Отечественной войне 1941—1945 гг.»", "Медаль «В память 800-летия Москвы»", "Народный артист РСФСР", "Народный артист Узбекской ССР", "Сталинская премия"];
 ?>
@@ -18,7 +17,7 @@
 
 <body>
     <div class="header">
-        <a href="index.php">назад</a>
+        <a href="TEMP__card.php">назад</a>
         <h1>
 <?php
     echo $person["name"];
@@ -57,24 +56,23 @@ for($i=0;$i<strlen($person["awardes"]);$i++)
 // array_push($strs,substr($person["awardes"], $li, $i-$li));
 
 for($i=0;$i<count($strs);$i++){
-    if($i%2==0){
+    if($i%2===0){
         echo "
         <div class='str'>
             <div class='el el__text el__text_l'>
                 <h2> " . $awardsNames[intval($strs[$i])-1] . " </h2>
             </div>
-            <div class='el el__img'><img src='img/a-".$strs[$i].".jpg'></div>
+            <div class='el el__img'><img src='img/awardes/a-".$strs[$i].".jpg'></div>
         </div>
         ";
     } else {
         echo "
         <div class='str'>
-            <div class='el el__text el__text_l'>
+            <div class='el el__img'><img src='img/awardes/a-".$strs[$i].".jpg'></div>
+            <div class='el el__text el__text_r'>
                 <h2> " . $awardsNames[intval($strs[$i])-1] . " </h2>
             </div>
-            <div class='el el__img'><img src='img/a-".$strs[$i].".jpg'></div>
-        </div>
-        ";
+        </div>";
     }
 }
 ?>
