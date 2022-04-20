@@ -1,7 +1,7 @@
 <?php
-    $con = mysqli_connect("localhost", "root", "","it-master-2022-veterany");
-    session_start();
+    include 'srcphp/connect.php';
     $person =  mysqli_fetch_assoc(mysqli_query($con,"SELECT * FROM `1` WHERE id = " . $_GET['id']));
+    $awardsNames = ["Орден Ленина", "Медаль «За доблестный труд в Великой Отечественной войне 1941—1945 гг.»", "Медаль «В память 800-летия Москвы»", "Народный артист РСФСР", "Народный артист Узбекской ССР", "Сталинская премия"];
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,9 @@
 
 <body>
     <div class="header">
-        <a href="index.php">назад</a>
+        <?php
+            echo "<a href=rn.php?rn=" . $person["area"] . ">назад</a>"
+        ?>
         <h1>
 <?php
     echo $person["name"];
@@ -42,47 +44,40 @@
     <h1>Награды</h1>
     <div class="awards">
         <?php
-
-for($i=0;$i<strlen($person["awardes"]);$i++){
-    
+$strs = [];
+$li = 0;
+for($i=0;$i<strlen($person["awardes"]);$i++)
+{
+    if($person["awardes"][$i] == " " || $i == strlen(intval($person["awardes"])-1))
+    {
+        array_push($strs,substr($person["awardes"], $li, $i-$li));
+        $li = $i+1;
+    }
 }
+// strpos($person["awardes"], " ", strlen($person["awardes"]-3)
+// array_push($strs,substr($person["awardes"], $li, $i-$li));
 
-        ?>
-        <div class="str">
-            <div class="el el__text el__text_l">
-                <h2>Орден Ленина </h2> Получен дважды </div>
-            <div class="el el__img"><img src="order_of_Lenin.png"></div>
-        </div>
-        <div class="str">
-            <div class="el el__img"><img src="2.jpg" alt=""></div>
-            <div class="el el__text el__text_r">
-                <h2>Медаль «За доблестный труд в Великой Отечественной войне 1941—1945 гг.»</h2>
+for($i=0;$i<count($strs);$i++){
+    if($i%2===0){
+        echo "
+        <div class='str'>
+            <div class='el el__text el__text_l'>
+                <h2> " . $awardsNames[intval($strs[$i])-1] . " </h2>
             </div>
+            <div class='el el__img'><img src='img/awardes/a-".$strs[$i].".jpg'></div>
         </div>
-        <div class="str">
-            <div class="el el__text el__text_l">
-                <h2>Медаль «В память 800-летия Москвы»</h2>
+        ";
+    } else {
+        echo "
+        <div class='str'>
+            <div class='el el__img'><img src='img/awardes/a-".$strs[$i].".jpg'></div>
+            <div class='el el__text el__text_r'>
+                <h2> " . $awardsNames[intval($strs[$i])-1] . " </h2>
             </div>
-            <div class="el el__img"><img src="3.jpg" alt=""></div>
-        </div>
-        <div class="str">
-            <div class="el el__img"><img src="4.png" alt=""></div>
-            <div class="el el__text el__text_r">
-                <h2>Народный артист РСФСР</h2>
-            </div>
-        </div>
-        <div class="str">
-            <div class="el el__text el__text_l">
-                <h2>Народный артист Узбекской ССР</h2>
-            </div>
-            <div class="el el__img"><img src="5.png" alt=""></div>
-        </div>
-        <div class="str">
-            <div class="el el__img"><img src="6.jpg" alt=""></div>
-            <div class="el el__text el__text_r">
-                <h2>Сталинская премия</h2>
-            </div>
-        </div>
+        </div>";
+    }
+}
+?>
     </div>
     <script>
         document.getElementById("p").style.height = window.innerHeight + "px";

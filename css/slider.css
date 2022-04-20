@@ -1,0 +1,149 @@
+a {
+    text-decoration: none;
+    position: relative;
+    transition: all ease .3s;
+    top: 0;
+}
+
+a:hover {
+    top: -.6em;
+}
+
+a:active {
+    top: 0;
+}
+
+.slider__parent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.slider {
+    background: #fff;
+    width: 1050px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider__inner {
+    position: relative;
+    height: 350px;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: .6s all ease;
+    left: 0;
+}
+
+.slider__el {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 350px;
+    position: relative;
+    top: 0;
+    transition: all ease .3s;
+}
+
+.slider__el__text {
+    /* position: absolute; */
+    text-align: center;
+    bottom: 1em;
+    color: #fff;
+    text-shadow: #000 1px 1px 2px;
+    width: 100%;
+}
+
+.btn {
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    border: 0;
+    width: 350px;
+    border-radius: 0;
+    padding: 0 2em;
+}
+
+.btn__l {
+    top: 0;
+    left: 0;
+    background: linear-gradient(0.25turn, rgb(110, 110, 110, 1), rgb(110, 110, 110, 0));
+}
+
+.btn__l button img {
+    transform: rotate(90deg);
+}
+
+.btn__r button img {
+    transform: rotate(-90deg);
+}
+
+.btn__r {
+    top: 0;
+    left: 700px;
+    background: linear-gradient(-0.25turn, rgb(78, 78, 78), rgb(110, 110, 110, 0));
+}
+
+.btn button {
+    height: 100%;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn__r button {
+    justify-content: flex-end;
+}
+
+.btn button img {
+    width: 50px;
+    position: relative;
+    left: 0;
+    transition: all ease .1s;
+    opacity: .7;
+}
+
+.btn__r:hover button img {
+    left: -0.3em;
+    opacity: 1;
+}
+
+.btn__l:hover button img {
+    left: 0.3em;
+    opacity: 1;
+}
+
+button:focus,
+button:active {
+    outline: 0;
+}
+
+@media (max-width: 1049px) {
+    .slider {
+        width: 350px;
+    }
+    .btn {
+        width: 50px;
+    }
+    .btn__l {
+        background: none;
+    }
+    .btn__r {
+        background: none;
+        left: 300px;
+    }
+}

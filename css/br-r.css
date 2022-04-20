@@ -1,0 +1,8 @@
+.path-h {
+    fill: #fff;
+    transition: all linear .3s;
+}
+
+.path-h:hover {
+    fill: rgb(27, 161, 0);
+}
