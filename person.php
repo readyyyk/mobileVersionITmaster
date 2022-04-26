@@ -12,7 +12,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/person.css">
-    <title>Document</title>
+    <link rel='shortcut icon' href='img/icons/index.png' type='image/x-icon'>
+    <title>
+        <?php
+            echo $person["name"];
+        ?>
+    </title>
 </head>
 
 <body>
