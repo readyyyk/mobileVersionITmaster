@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: #afafaf;
 }
 label {
   position: relative;
@@ -10,13 +11,13 @@ label:hover {
   top: 2px;
 }
 .content {
-  min-height: 1000px;
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #afafaf;
   box-sizing: border-box;
-  padding: 0 100px;
+  position: relative;
+  top: 80px;
+  z-index: 0;
 }
 .card {
   width: 330px;
@@ -26,6 +27,7 @@ label:hover {
   align-items: flex-end;
   border: #fff 1px solid;
   border-radius: 15px;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;

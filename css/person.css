@@ -16,11 +16,13 @@ h1 {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.6);
   padding: 0 2em;
+  box-sizing: border-box;
 }
 .header a {
   color: black;
   font-family: sant-serif;
   font-size: 20px;
+  position: absolute;
 }
 .prev {
   width: 100%;

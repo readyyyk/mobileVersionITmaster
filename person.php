@@ -12,12 +12,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/person.css">
-    <title>Document</title>
+    <link rel='shortcut icon' href='img/icons/index.png' type='image/x-icon'>
+    <title>
+        <?php
+            echo $person["name"];
+        ?>
+    </title>
 </head>
 
 <body>
     <div class="header">
-        <a href="TEMP__card.php">назад</a>
+        <?php
+            echo "<a href=rn.php?rn=" . $person["area"] . ">назад</a>"
+        ?>
         <h1>
 <?php
     echo $person["name"];

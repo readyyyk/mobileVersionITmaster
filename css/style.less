@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background: rgb(175, 175, 175);
 }
 label{
     position: relative;
@@ -11,13 +12,13 @@ label{
 }
 
 .content{
-    min-height: 1000px;
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgb(175, 175, 175);
     box-sizing: border-box;
-    padding: 0 100px;
+    position: relative;
+    top: 80px;
+    z-index: 0;
 }
 
 .card{
@@ -33,6 +34,7 @@ label{
     align-items: flex-end;
     border: #fff 1px solid;
     border-radius: 15px;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
