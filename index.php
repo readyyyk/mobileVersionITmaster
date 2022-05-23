@@ -8,6 +8,7 @@
     <title>Главная</title>
     <link rel='shortcut icon' href='img/icons/index.png' type='image/x-icon'>
 
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/br-r.css">
     <style>
@@ -27,7 +28,23 @@
     </style>
 </head>
 <body>
-    
+
+    <div class="header">
+        <div class="header__b__sm header__bl__center">
+            <a href="index.php" class="header__link">
+                back
+            </a>
+        </div>
+        <div class="header__b__m header__bl__center">
+            Main
+        </div>
+        <div class="header__b__sm header__bl__center">
+            <a href="insert.php" class="header__link">
+                insert
+            </a>
+        </div>
+    </div>
+    <div class="header__filler">:)</div>
 
     <div class="content">
         <svg width="1008px" height="700px" version="1.1" id="svg5" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" sodipodi:docname="done.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"

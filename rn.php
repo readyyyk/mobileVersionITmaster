@@ -58,6 +58,7 @@
                 echo $rns[$_GET["rn"]-1] . " район";
             ?>
         </h1>
+        
     </div>
     <div class="content">
         <div class="cards">
